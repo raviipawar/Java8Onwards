@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -71,5 +72,13 @@ public class StreamExamples {
 		Set<Integer> set = wage3.stream().collect(Collectors.toSet());
 		System.out.println(set);
 		
+		//Random numbers in sorted order
+		Random random =  new Random();
+		random.ints().limit(5).sorted().forEach(System.out::println);
+		
+		//add all numbers in list
+		int sum;
+		sum = wage1.stream().mapToInt(Integer ::intValue).sum();
+		System.out.println("Total sum :"+sum);
 	}
 }
